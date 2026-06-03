@@ -6,7 +6,9 @@
 
 @dragonchaser
 
+### 🐛 Bug Fixes
 
+- use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
 
 ## [7.1.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.1.0) - 2026-06-02
 
