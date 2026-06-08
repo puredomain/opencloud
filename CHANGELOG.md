@@ -1,14 +1,19 @@
 # Changelog
 
-## [7.1.1](https://github.com/opencloud-eu/opencloud/releases/tag/v7.1.1) - 2026-06-04
+## [7.1.1](https://github.com/opencloud-eu/opencloud/releases/tag/v7.1.1) - 2026-06-08
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@butonic, @dragonchaser
+@JammingBen, @butonic, @dragonchaser
 
 ### 🐛 Bug Fixes
 
+- fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
 - use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
+
+### 📦️ Dependencies
+
+- build(deps): bump axios from 1.16.0 to 1.16.1 in /services/idp [[#2883](https://github.com/opencloud-eu/opencloud/pull/2883)]
 
 ## [7.1.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.1.0) - 2026-06-02
 
