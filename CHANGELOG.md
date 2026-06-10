@@ -6,14 +6,15 @@
 
 @Heiko-Pohl, @JammingBen, @aduffeck, @butonic, @dragonchaser, @kulmann, @rhafer
 
+### 🐛 Bug Fixes
+
+- fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
+- fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
+- use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
+
 ### 📚 Documentation
 
 - Rename role_name from "guest" to "user-light"  [[#2912](https://github.com/opencloud-eu/opencloud/pull/2912)]
-
-### 🐛 Bug Fixes
-
-- fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
-- use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
 
 ### 📦️ Dependencies
 
