@@ -4,7 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@JammingBen, @aduffeck, @butonic, @dragonchaser, @kulmann, @rhafer
+@Heiko-Pohl, @JammingBen, @aduffeck, @butonic, @dragonchaser, @kulmann, @rhafer
+
+### 📚 Documentation
+
+- Rename role_name from "guest" to "user-light"  [[#2912](https://github.com/opencloud-eu/opencloud/pull/2912)]
 
 ### 🐛 Bug Fixes
 
