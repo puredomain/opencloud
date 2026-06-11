@@ -1,10 +1,14 @@
 # Changelog
 
-## [7.1.1](https://github.com/opencloud-eu/opencloud/releases/tag/v7.1.1) - 2026-06-11
+## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-11
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @Heiko-Pohl, @JammingBen, @aduffeck, @butonic, @dragonchaser, @kulmann, @rhafer
+
+### 📈 Enhancement
+
+- feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
 
 ### 🐛 Bug Fixes
 
