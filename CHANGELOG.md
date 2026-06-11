@@ -8,6 +8,7 @@
 
 ### 📈 Enhancement
 
+- next to main [[#2924](https://github.com/opencloud-eu/opencloud/pull/2924)]
 - feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
 
 ### 🐛 Bug Fixes
