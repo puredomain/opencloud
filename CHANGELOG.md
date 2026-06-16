@@ -26,6 +26,9 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/nats-io/nats-server/v2 from 2.14.0 to 2.14.2 [[#2885](https://github.com/opencloud-eu/opencloud/pull/2885)]
+- build(deps): bump github.com/open-policy-agent/opa from 1.15.2 to 1.17.1 [[#2858](https://github.com/opencloud-eu/opencloud/pull/2858)]
+- build(deps): bump github.com/blevesearch/bleve/v2 from 2.5.7 to 2.6.0 [[#2797](https://github.com/opencloud-eu/opencloud/pull/2797)]
 - chore: bump reva to latest main [[#2943](https://github.com/opencloud-eu/opencloud/pull/2943)]
 - bump reva to latest main [[#2922](https://github.com/opencloud-eu/opencloud/pull/2922)]
 - build(deps-dev): bump webpack-manifest-plugin from 5.0.0 to 6.0.1 in /services/idp [[#2884](https://github.com/opencloud-eu/opencloud/pull/2884)]
