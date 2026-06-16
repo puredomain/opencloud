@@ -6,6 +6,13 @@
 
 @Heiko-Pohl, @JammingBen, @aduffeck, @butonic, @dragonchaser, @kulmann, @micbar, @rhafer
 
+### 📈 Enhancement
+
+- add tls support for all nats connections [[#2063](https://github.com/opencloud-eu/opencloud/pull/2063)]
+- feat: add more roles [[#2928](https://github.com/opencloud-eu/opencloud/pull/2928)]
+- next to main [[#2924](https://github.com/opencloud-eu/opencloud/pull/2924)]
+- feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
+
 ### 🐛 Bug Fixes
 
 - bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
@@ -13,12 +20,6 @@
 - fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
 - fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
 - use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
-
-### 📈 Enhancement
-
-- feat: add more roles [[#2928](https://github.com/opencloud-eu/opencloud/pull/2928)]
-- next to main [[#2924](https://github.com/opencloud-eu/opencloud/pull/2924)]
-- feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
 
 ### 📚 Documentation
 
