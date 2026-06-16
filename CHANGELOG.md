@@ -1,6 +1,6 @@
 # Changelog
 
-## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-15
+## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-16
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 🐛 Bug Fixes
 
+- bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
 - change error level for trashing items interaction with search [[#2951](https://github.com/opencloud-eu/opencloud/pull/2951)]
 - fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
 - fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
