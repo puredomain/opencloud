@@ -27,6 +27,7 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/go-chi/chi/v5 from 5.2.5 to 5.3.0 [[#2882](https://github.com/opencloud-eu/opencloud/pull/2882)]
 - build(deps): bump github.com/nats-io/nats-server/v2 from 2.14.0 to 2.14.2 [[#2885](https://github.com/opencloud-eu/opencloud/pull/2885)]
 - build(deps): bump github.com/open-policy-agent/opa from 1.15.2 to 1.17.1 [[#2858](https://github.com/opencloud-eu/opencloud/pull/2858)]
 - build(deps): bump github.com/blevesearch/bleve/v2 from 2.5.7 to 2.6.0 [[#2797](https://github.com/opencloud-eu/opencloud/pull/2797)]
