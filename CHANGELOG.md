@@ -27,6 +27,7 @@
 
 ### 📦️ Dependencies
 
+- chore: bump web to v7.2.0-beta.3 [[#2953](https://github.com/opencloud-eu/opencloud/pull/2953)]
 - build(deps): bump golang.org/x/text from 0.37.0 to 0.38.0 [[#2956](https://github.com/opencloud-eu/opencloud/pull/2956)]
 - build(deps): bump github.com/kovidgoyal/imaging from 1.8.20 to 1.8.21 [[#2955](https://github.com/opencloud-eu/opencloud/pull/2955)]
 - build(deps): bump github.com/go-chi/chi/v5 from 5.2.5 to 5.3.0 [[#2882](https://github.com/opencloud-eu/opencloud/pull/2882)]
