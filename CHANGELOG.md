@@ -27,6 +27,8 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump golang.org/x/text from 0.37.0 to 0.38.0 [[#2956](https://github.com/opencloud-eu/opencloud/pull/2956)]
+- build(deps): bump github.com/kovidgoyal/imaging from 1.8.20 to 1.8.21 [[#2955](https://github.com/opencloud-eu/opencloud/pull/2955)]
 - build(deps): bump github.com/go-chi/chi/v5 from 5.2.5 to 5.3.0 [[#2882](https://github.com/opencloud-eu/opencloud/pull/2882)]
 - build(deps): bump github.com/nats-io/nats-server/v2 from 2.14.0 to 2.14.2 [[#2885](https://github.com/opencloud-eu/opencloud/pull/2885)]
 - build(deps): bump github.com/open-policy-agent/opa from 1.15.2 to 1.17.1 [[#2858](https://github.com/opencloud-eu/opencloud/pull/2858)]
