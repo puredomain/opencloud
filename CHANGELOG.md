@@ -1,10 +1,19 @@
 # Changelog
 
-## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-17
+## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-18
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @Heiko-Pohl, @JammingBen, @aduffeck, @butonic, @dragonchaser, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
+
+### 🐛 Bug Fixes
+
+- Revert "fix: disallow thumbnails for tiff and jpeg2000 images" [[#2973](https://github.com/opencloud-eu/opencloud/pull/2973)]
+- bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
+- change error level for trashing items interaction with search [[#2951](https://github.com/opencloud-eu/opencloud/pull/2951)]
+- fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
+- fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
+- use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
 
 ### 📚 Documentation
 
@@ -17,14 +26,6 @@
 - feat: add more roles [[#2928](https://github.com/opencloud-eu/opencloud/pull/2928)]
 - next to main [[#2924](https://github.com/opencloud-eu/opencloud/pull/2924)]
 - feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
-
-### 🐛 Bug Fixes
-
-- bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
-- change error level for trashing items interaction with search [[#2951](https://github.com/opencloud-eu/opencloud/pull/2951)]
-- fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
-- fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
-- use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
 
 ### 📦️ Dependencies
 
