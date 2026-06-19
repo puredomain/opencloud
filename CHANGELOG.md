@@ -1,10 +1,16 @@
 # Changelog
 
-## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-18
+## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-19
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Heiko-Pohl, @JammingBen, @aduffeck, @butonic, @dragonchaser, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
+@Heiko-Pohl, @JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
+
+### 📚 Documentation
+
+- roling release template [[#2972](https://github.com/opencloud-eu/opencloud/pull/2972)]
+- enhance: fix typos in webfinger service description [[#2958](https://github.com/opencloud-eu/opencloud/pull/2958)]
+- Rename role_name from "guest" to "user-light"  [[#2912](https://github.com/opencloud-eu/opencloud/pull/2912)]
 
 ### 🐛 Bug Fixes
 
@@ -14,11 +20,6 @@
 - fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
 - fix(idp): aarch64 build [[#2906](https://github.com/opencloud-eu/opencloud/pull/2906)]
 - use ldap instead of ldaps internally [[#2880](https://github.com/opencloud-eu/opencloud/pull/2880)]
-
-### 📚 Documentation
-
-- enhance: fix typos in webfinger service description [[#2958](https://github.com/opencloud-eu/opencloud/pull/2958)]
-- Rename role_name from "guest" to "user-light"  [[#2912](https://github.com/opencloud-eu/opencloud/pull/2912)]
 
 ### 📈 Enhancement
 
