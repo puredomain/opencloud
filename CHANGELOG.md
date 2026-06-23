@@ -30,6 +30,7 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump go.opentelemetry.io/otel/exporters/stdout/stdouttrace from 1.43.0 to 1.44.0 [[#2954](https://github.com/opencloud-eu/opencloud/pull/2954)]
 - chore: bump web to v7.2.0-beta.3 [[#2953](https://github.com/opencloud-eu/opencloud/pull/2953)]
 - build(deps): bump golang.org/x/text from 0.37.0 to 0.38.0 [[#2956](https://github.com/opencloud-eu/opencloud/pull/2956)]
 - build(deps): bump github.com/kovidgoyal/imaging from 1.8.20 to 1.8.21 [[#2955](https://github.com/opencloud-eu/opencloud/pull/2955)]
