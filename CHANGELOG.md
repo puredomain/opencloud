@@ -34,6 +34,8 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/tus/tusd/v2 from 2.9.2 to 2.10.0 [[#3006](https://github.com/opencloud-eu/opencloud/pull/3006)]
+- build(deps): bump github.com/coreos/go-oidc/v3 from 3.18.0 to 3.19.0 [[#3007](https://github.com/opencloud-eu/opencloud/pull/3007)]
 - build(deps): bump github.com/nats-io/nats.go from 1.51.0 to 1.52.0 [[#2968](https://github.com/opencloud-eu/opencloud/pull/2968)]
 - build(deps): bump react-i18next from 15.7.4 to 17.0.8 in /services/idp [[#2917](https://github.com/opencloud-eu/opencloud/pull/2917)]
 - build(deps): bump go.opentelemetry.io/otel/exporters/stdout/stdouttrace from 1.43.0 to 1.44.0 [[#2954](https://github.com/opencloud-eu/opencloud/pull/2954)]
