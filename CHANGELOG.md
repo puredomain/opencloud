@@ -1,6 +1,6 @@
 # Changelog
 
-## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-23
+## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-24
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -30,6 +30,8 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/nats-io/nats.go from 1.51.0 to 1.52.0 [[#2968](https://github.com/opencloud-eu/opencloud/pull/2968)]
+- build(deps): bump react-i18next from 15.7.4 to 17.0.8 in /services/idp [[#2917](https://github.com/opencloud-eu/opencloud/pull/2917)]
 - build(deps): bump go.opentelemetry.io/otel/exporters/stdout/stdouttrace from 1.43.0 to 1.44.0 [[#2954](https://github.com/opencloud-eu/opencloud/pull/2954)]
 - chore: bump web to v7.2.0-beta.3 [[#2953](https://github.com/opencloud-eu/opencloud/pull/2953)]
 - build(deps): bump golang.org/x/text from 0.37.0 to 0.38.0 [[#2956](https://github.com/opencloud-eu/opencloud/pull/2956)]
