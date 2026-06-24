@@ -6,6 +6,10 @@
 
 @Heiko-Pohl, @JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
 
+### ✅ Tests
+
+- api-test: deleting space [[#2970](https://github.com/opencloud-eu/opencloud/pull/2970)]
+
 ### 📚 Documentation
 
 - roling release template [[#2972](https://github.com/opencloud-eu/opencloud/pull/2972)]
