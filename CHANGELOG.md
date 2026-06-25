@@ -1,6 +1,6 @@
 # Changelog
 
-## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-24
+## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-25
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -34,6 +34,8 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/onsi/gomega from 1.40.0 to 1.42.1 [[#3013](https://github.com/opencloud-eu/opencloud/pull/3013)]
+- build(deps): bump golang.org/x/net from 0.55.0 to 0.56.0 [[#2957](https://github.com/opencloud-eu/opencloud/pull/2957)]
 - build(deps): bump github.com/tus/tusd/v2 from 2.9.2 to 2.10.0 [[#3006](https://github.com/opencloud-eu/opencloud/pull/3006)]
 - build(deps): bump github.com/coreos/go-oidc/v3 from 3.18.0 to 3.19.0 [[#3007](https://github.com/opencloud-eu/opencloud/pull/3007)]
 - build(deps): bump github.com/nats-io/nats.go from 1.51.0 to 1.52.0 [[#2968](https://github.com/opencloud-eu/opencloud/pull/2968)]
