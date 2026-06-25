@@ -8,6 +8,7 @@
 
 ### ✅ Tests
 
+- Update tests for opencloud-eu/reva#655 [[#2889](https://github.com/opencloud-eu/opencloud/pull/2889)]
 - api-test: deleting space [[#2970](https://github.com/opencloud-eu/opencloud/pull/2970)]
 
 ### 📚 Documentation
