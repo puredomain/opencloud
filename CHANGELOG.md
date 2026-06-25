@@ -1,5 +1,53 @@
 # Changelog
 
+## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-06-25
+
+### ❤️ Thanks to all contributors! ❤️
+
+@JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
+
+### ✅ Tests
+
+- api-test: deleting space [[#2970](https://github.com/opencloud-eu/opencloud/pull/2970)]
+
+### 📚 Documentation
+
+- roling release template [[#2972](https://github.com/opencloud-eu/opencloud/pull/2972)]
+- enhance: fix typos in webfinger service description [[#2958](https://github.com/opencloud-eu/opencloud/pull/2958)]
+
+### 🐛 Bug Fixes
+
+- Revert "fix: disallow thumbnails for tiff and jpeg2000 images" [[#2973](https://github.com/opencloud-eu/opencloud/pull/2973)]
+- bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
+- change error level for trashing items interaction with search [[#2951](https://github.com/opencloud-eu/opencloud/pull/2951)]
+- fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
+
+### 📈 Enhancement
+
+- add tls support for all nats connections [[#2063](https://github.com/opencloud-eu/opencloud/pull/2063)]
+- feat: add more roles [[#2928](https://github.com/opencloud-eu/opencloud/pull/2928)]
+- next to main [[#2924](https://github.com/opencloud-eu/opencloud/pull/2924)]
+- feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
+
+### 📦️ Dependencies
+
+- build(deps): bump github.com/gookit/config/v2 from 2.2.7 to 2.2.8 [[#3015](https://github.com/opencloud-eu/opencloud/pull/3015)]
+- build(deps): bump github.com/onsi/gomega from 1.40.0 to 1.42.1 [[#3013](https://github.com/opencloud-eu/opencloud/pull/3013)]
+- build(deps): bump golang.org/x/net from 0.55.0 to 0.56.0 [[#2957](https://github.com/opencloud-eu/opencloud/pull/2957)]
+- build(deps): bump github.com/tus/tusd/v2 from 2.9.2 to 2.10.0 [[#3006](https://github.com/opencloud-eu/opencloud/pull/3006)]
+- build(deps): bump github.com/coreos/go-oidc/v3 from 3.18.0 to 3.19.0 [[#3007](https://github.com/opencloud-eu/opencloud/pull/3007)]
+- build(deps): bump github.com/nats-io/nats.go from 1.51.0 to 1.52.0 [[#2968](https://github.com/opencloud-eu/opencloud/pull/2968)]
+- build(deps): bump react-i18next from 15.7.4 to 17.0.8 in /services/idp [[#2917](https://github.com/opencloud-eu/opencloud/pull/2917)]
+- build(deps): bump go.opentelemetry.io/otel/exporters/stdout/stdouttrace from 1.43.0 to 1.44.0 [[#2954](https://github.com/opencloud-eu/opencloud/pull/2954)]
+- chore: bump web to v7.2.0-beta.3 [[#2953](https://github.com/opencloud-eu/opencloud/pull/2953)]
+- build(deps): bump golang.org/x/text from 0.37.0 to 0.38.0 [[#2956](https://github.com/opencloud-eu/opencloud/pull/2956)]
+- build(deps): bump github.com/kovidgoyal/imaging from 1.8.20 to 1.8.21 [[#2955](https://github.com/opencloud-eu/opencloud/pull/2955)]
+- build(deps): bump github.com/go-chi/chi/v5 from 5.2.5 to 5.3.0 [[#2882](https://github.com/opencloud-eu/opencloud/pull/2882)]
+- build(deps): bump github.com/nats-io/nats-server/v2 from 2.14.0 to 2.14.2 [[#2885](https://github.com/opencloud-eu/opencloud/pull/2885)]
+- build(deps): bump github.com/open-policy-agent/opa from 1.15.2 to 1.17.1 [[#2858](https://github.com/opencloud-eu/opencloud/pull/2858)]
+- build(deps): bump github.com/blevesearch/bleve/v2 from 2.5.7 to 2.6.0 [[#2797](https://github.com/opencloud-eu/opencloud/pull/2797)]
+- chore: bump reva to latest main [[#2943](https://github.com/opencloud-eu/opencloud/pull/2943)]
+
 ## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-25
 
 ### ❤️ Thanks to all contributors! ❤️
