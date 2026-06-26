@@ -33,6 +33,7 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump go.opentelemetry.io/contrib/zpages from 0.68.0 to 0.69.0 [[#3024](https://github.com/opencloud-eu/opencloud/pull/3024)]
 - build(deps): bump github.com/onsi/ginkgo/v2 from 2.31.0 to 2.32.0 [[#3022](https://github.com/opencloud-eu/opencloud/pull/3022)]
 - build(deps): bump github.com/gookit/config/v2 from 2.2.7 to 2.2.8 [[#3015](https://github.com/opencloud-eu/opencloud/pull/3015)]
 - build(deps): bump github.com/onsi/gomega from 1.40.0 to 1.42.1 [[#3013](https://github.com/opencloud-eu/opencloud/pull/3013)]
