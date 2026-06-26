@@ -1,10 +1,18 @@
 # Changelog
 
-## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-06-25
+## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-06-26
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
+@JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @fschade, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
+
+### 🐛 Bug Fixes
+
+- fix: make the collaboration service events optional [[#3001](https://github.com/opencloud-eu/opencloud/pull/3001)]
+- Revert "fix: disallow thumbnails for tiff and jpeg2000 images" [[#2973](https://github.com/opencloud-eu/opencloud/pull/2973)]
+- bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
+- change error level for trashing items interaction with search [[#2951](https://github.com/opencloud-eu/opencloud/pull/2951)]
+- fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
 
 ### ✅ Tests
 
@@ -15,13 +23,6 @@
 
 - roling release template [[#2972](https://github.com/opencloud-eu/opencloud/pull/2972)]
 - enhance: fix typos in webfinger service description [[#2958](https://github.com/opencloud-eu/opencloud/pull/2958)]
-
-### 🐛 Bug Fixes
-
-- Revert "fix: disallow thumbnails for tiff and jpeg2000 images" [[#2973](https://github.com/opencloud-eu/opencloud/pull/2973)]
-- bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
-- change error level for trashing items interaction with search [[#2951](https://github.com/opencloud-eu/opencloud/pull/2951)]
-- fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
 
 ### 📈 Enhancement
 
