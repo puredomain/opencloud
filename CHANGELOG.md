@@ -4,7 +4,13 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @fschade, @kulmann, @micbar, @rhafer, @saw-jan, @schweigisito
+@JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @fschade, @kulmann, @micbar, @michaelstingl, @rhafer, @saw-jan, @schweigisito
+
+### ✅ Tests
+
+- test(apiSpaces): a space admin can delete a space with no manager [[#3040](https://github.com/opencloud-eu/opencloud/pull/3040)]
+- Update tests for opencloud-eu/reva#655 [[#2889](https://github.com/opencloud-eu/opencloud/pull/2889)]
+- api-test: deleting space [[#2970](https://github.com/opencloud-eu/opencloud/pull/2970)]
 
 ### 🐛 Bug Fixes
 
@@ -13,11 +19,6 @@
 - bump reva [[#2950](https://github.com/opencloud-eu/opencloud/pull/2950)]
 - change error level for trashing items interaction with search [[#2951](https://github.com/opencloud-eu/opencloud/pull/2951)]
 - fix: Send SSE events for SpaceEnabled/Disabled to affected users [[#2871](https://github.com/opencloud-eu/opencloud/pull/2871)]
-
-### ✅ Tests
-
-- Update tests for opencloud-eu/reva#655 [[#2889](https://github.com/opencloud-eu/opencloud/pull/2889)]
-- api-test: deleting space [[#2970](https://github.com/opencloud-eu/opencloud/pull/2970)]
 
 ### 📚 Documentation
 
