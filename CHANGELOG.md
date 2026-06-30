@@ -1,6 +1,6 @@
 # Changelog
 
-## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-06-29
+## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-06-30
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -34,6 +34,7 @@
 
 ### 📦️ Dependencies
 
+- build(deps-dev): bump i18next-conv from 15.1.2 to 17.0.0 in /services/idp [[#3044](https://github.com/opencloud-eu/opencloud/pull/3044)]
 - build(deps): bump github.com/testcontainers/testcontainers-go/modules/opensearch from 0.42.0 to 0.43.0 [[#3023](https://github.com/opencloud-eu/opencloud/pull/3023)]
 - build(deps): bump go.opentelemetry.io/contrib/zpages from 0.68.0 to 0.69.0 [[#3024](https://github.com/opencloud-eu/opencloud/pull/3024)]
 - build(deps): bump github.com/onsi/ginkgo/v2 from 2.31.0 to 2.32.0 [[#3022](https://github.com/opencloud-eu/opencloud/pull/3022)]
