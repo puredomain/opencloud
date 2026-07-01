@@ -4,10 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@AlexAndBear, @JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @fschade, @kulmann, @micbar, @michaelstingl, @rhafer, @saw-jan, @schweigisito
+@AlexAndBear, @JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @dschmidt, @fschade, @kulmann, @micbar, @michaelstingl, @rhafer, @saw-jan, @schweigisito
 
 ### 📈 Enhancement
 
+- feat(graph): add MS Graph colon-syntax path lookup middleware [[#2688](https://github.com/opencloud-eu/opencloud/pull/2688)]
 - feat: adjust theme chrome colors and logos [[#2599](https://github.com/opencloud-eu/opencloud/pull/2599)]
 - add tls support for all nats connections [[#2063](https://github.com/opencloud-eu/opencloud/pull/2063)]
 - feat: add more roles [[#2928](https://github.com/opencloud-eu/opencloud/pull/2928)]
