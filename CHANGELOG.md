@@ -4,7 +4,15 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @fschade, @kulmann, @micbar, @michaelstingl, @rhafer, @saw-jan, @schweigisito
+@AlexAndBear, @JammingBen, @ScharfViktor, @aduffeck, @butonic, @dragonchaser, @fschade, @kulmann, @micbar, @michaelstingl, @rhafer, @saw-jan, @schweigisito
+
+### 📈 Enhancement
+
+- feat: adjust theme chrome colors and logos [[#2599](https://github.com/opencloud-eu/opencloud/pull/2599)]
+- add tls support for all nats connections [[#2063](https://github.com/opencloud-eu/opencloud/pull/2063)]
+- feat: add more roles [[#2928](https://github.com/opencloud-eu/opencloud/pull/2928)]
+- next to main [[#2924](https://github.com/opencloud-eu/opencloud/pull/2924)]
+- feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
 
 ### ✅ Tests
 
@@ -24,13 +32,6 @@
 
 - roling release template [[#2972](https://github.com/opencloud-eu/opencloud/pull/2972)]
 - enhance: fix typos in webfinger service description [[#2958](https://github.com/opencloud-eu/opencloud/pull/2958)]
-
-### 📈 Enhancement
-
-- add tls support for all nats connections [[#2063](https://github.com/opencloud-eu/opencloud/pull/2063)]
-- feat: add more roles [[#2928](https://github.com/opencloud-eu/opencloud/pull/2928)]
-- next to main [[#2924](https://github.com/opencloud-eu/opencloud/pull/2924)]
-- feat: add core apps env variable to override the default core apps [[#2930](https://github.com/opencloud-eu/opencloud/pull/2930)]
 
 ### 📦️ Dependencies
 
