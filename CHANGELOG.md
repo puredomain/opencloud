@@ -1,6 +1,6 @@
 # Changelog
 
-## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-06-30
+## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-07-01
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -34,6 +34,8 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/jellydator/ttlcache/v3 from 3.4.0 to 3.4.1 [[#3030](https://github.com/opencloud-eu/opencloud/pull/3030)]
+- build(deps): bump go.etcd.io/bbolt from 1.4.3 to 1.5.0 [[#3014](https://github.com/opencloud-eu/opencloud/pull/3014)]
 - build(deps-dev): bump i18next-conv from 15.1.2 to 17.0.0 in /services/idp [[#3044](https://github.com/opencloud-eu/opencloud/pull/3044)]
 - build(deps): bump github.com/testcontainers/testcontainers-go/modules/opensearch from 0.42.0 to 0.43.0 [[#3023](https://github.com/opencloud-eu/opencloud/pull/3023)]
 - build(deps): bump go.opentelemetry.io/contrib/zpages from 0.68.0 to 0.69.0 [[#3024](https://github.com/opencloud-eu/opencloud/pull/3024)]
