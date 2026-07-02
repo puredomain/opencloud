@@ -1,6 +1,6 @@
 # Changelog
 
-## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-07-01
+## [7.3.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.3.0) - 2026-07-02
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -36,6 +36,8 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump google.golang.org/grpc from 1.81.1 to 1.82.0 [[#3055](https://github.com/opencloud-eu/opencloud/pull/3055)]
+- build(deps): bump github.com/open-policy-agent/opa from 1.17.1 to 1.18.1 [[#3054](https://github.com/opencloud-eu/opencloud/pull/3054)]
 - build(deps): bump github.com/jellydator/ttlcache/v3 from 3.4.0 to 3.4.1 [[#3030](https://github.com/opencloud-eu/opencloud/pull/3030)]
 - build(deps): bump go.etcd.io/bbolt from 1.4.3 to 1.5.0 [[#3014](https://github.com/opencloud-eu/opencloud/pull/3014)]
 - build(deps-dev): bump i18next-conv from 15.1.2 to 17.0.0 in /services/idp [[#3044](https://github.com/opencloud-eu/opencloud/pull/3044)]
