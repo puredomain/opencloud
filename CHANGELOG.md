@@ -36,29 +36,7 @@
 
 ### 📦️ Dependencies
 
-- build(deps): bump google.golang.org/grpc from 1.81.1 to 1.82.0 [[#3055](https://github.com/opencloud-eu/opencloud/pull/3055)]
-- build(deps): bump github.com/open-policy-agent/opa from 1.17.1 to 1.18.1 [[#3054](https://github.com/opencloud-eu/opencloud/pull/3054)]
-- build(deps): bump github.com/jellydator/ttlcache/v3 from 3.4.0 to 3.4.1 [[#3030](https://github.com/opencloud-eu/opencloud/pull/3030)]
-- build(deps): bump go.etcd.io/bbolt from 1.4.3 to 1.5.0 [[#3014](https://github.com/opencloud-eu/opencloud/pull/3014)]
-- build(deps-dev): bump i18next-conv from 15.1.2 to 17.0.0 in /services/idp [[#3044](https://github.com/opencloud-eu/opencloud/pull/3044)]
-- build(deps): bump github.com/testcontainers/testcontainers-go/modules/opensearch from 0.42.0 to 0.43.0 [[#3023](https://github.com/opencloud-eu/opencloud/pull/3023)]
-- build(deps): bump go.opentelemetry.io/contrib/zpages from 0.68.0 to 0.69.0 [[#3024](https://github.com/opencloud-eu/opencloud/pull/3024)]
-- build(deps): bump github.com/onsi/ginkgo/v2 from 2.31.0 to 2.32.0 [[#3022](https://github.com/opencloud-eu/opencloud/pull/3022)]
-- build(deps): bump github.com/gookit/config/v2 from 2.2.7 to 2.2.8 [[#3015](https://github.com/opencloud-eu/opencloud/pull/3015)]
-- build(deps): bump github.com/onsi/gomega from 1.40.0 to 1.42.1 [[#3013](https://github.com/opencloud-eu/opencloud/pull/3013)]
-- build(deps): bump golang.org/x/net from 0.55.0 to 0.56.0 [[#2957](https://github.com/opencloud-eu/opencloud/pull/2957)]
-- build(deps): bump github.com/tus/tusd/v2 from 2.9.2 to 2.10.0 [[#3006](https://github.com/opencloud-eu/opencloud/pull/3006)]
-- build(deps): bump github.com/coreos/go-oidc/v3 from 3.18.0 to 3.19.0 [[#3007](https://github.com/opencloud-eu/opencloud/pull/3007)]
-- build(deps): bump github.com/nats-io/nats.go from 1.51.0 to 1.52.0 [[#2968](https://github.com/opencloud-eu/opencloud/pull/2968)]
-- build(deps): bump react-i18next from 15.7.4 to 17.0.8 in /services/idp [[#2917](https://github.com/opencloud-eu/opencloud/pull/2917)]
-- build(deps): bump go.opentelemetry.io/otel/exporters/stdout/stdouttrace from 1.43.0 to 1.44.0 [[#2954](https://github.com/opencloud-eu/opencloud/pull/2954)]
 - chore: bump web to v7.2.0-beta.3 [[#2953](https://github.com/opencloud-eu/opencloud/pull/2953)]
-- build(deps): bump golang.org/x/text from 0.37.0 to 0.38.0 [[#2956](https://github.com/opencloud-eu/opencloud/pull/2956)]
-- build(deps): bump github.com/kovidgoyal/imaging from 1.8.20 to 1.8.21 [[#2955](https://github.com/opencloud-eu/opencloud/pull/2955)]
-- build(deps): bump github.com/go-chi/chi/v5 from 5.2.5 to 5.3.0 [[#2882](https://github.com/opencloud-eu/opencloud/pull/2882)]
-- build(deps): bump github.com/nats-io/nats-server/v2 from 2.14.0 to 2.14.2 [[#2885](https://github.com/opencloud-eu/opencloud/pull/2885)]
-- build(deps): bump github.com/open-policy-agent/opa from 1.15.2 to 1.17.1 [[#2858](https://github.com/opencloud-eu/opencloud/pull/2858)]
-- build(deps): bump github.com/blevesearch/bleve/v2 from 2.5.7 to 2.6.0 [[#2797](https://github.com/opencloud-eu/opencloud/pull/2797)]
 - chore: bump reva to latest main [[#2943](https://github.com/opencloud-eu/opencloud/pull/2943)]
 
 ## [7.2.0](https://github.com/opencloud-eu/opencloud/releases/tag/v7.2.0) - 2026-06-25
