@@ -36,6 +36,7 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/libregraph/lico from 0.66.0 to 0.67.0 [[#3028](https://github.com/opencloud-eu/opencloud/pull/3028)]
 - chore: bump web to v7.2.0-beta.3 [[#2953](https://github.com/opencloud-eu/opencloud/pull/2953)]
 - chore: bump reva to latest main [[#2943](https://github.com/opencloud-eu/opencloud/pull/2943)]
 
