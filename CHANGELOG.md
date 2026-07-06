@@ -36,6 +36,7 @@
 
 ### 📦️ Dependencies
 
+- build(deps): bump github.com/gookit/config/v2 from 2.2.8 to 2.2.9 [[#3075](https://github.com/opencloud-eu/opencloud/pull/3075)]
 - build(deps): bump github.com/open-policy-agent/opa from 1.18.1 to 1.18.2 [[#3061](https://github.com/opencloud-eu/opencloud/pull/3061)]
 - build(deps): bump github.com/kovidgoyal/imaging from 1.8.21 to 1.8.22 [[#3060](https://github.com/opencloud-eu/opencloud/pull/3060)]
 - build(deps): bump github.com/libregraph/lico from 0.66.0 to 0.67.0 [[#3028](https://github.com/opencloud-eu/opencloud/pull/3028)]
