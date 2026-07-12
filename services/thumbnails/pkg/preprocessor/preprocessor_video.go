@@ -11,7 +11,6 @@ package preprocessor
 import (
 	"bytes"
 	"fmt"
-	"image"
 	"io"
 	"os"
 	"os/exec"
@@ -74,9 +73,10 @@ func (v VideoDecoder) Convert(r io.Reader) (any, error) {
 		return nil, fmt.Errorf("ffmpeg produced no frame")
 	}
 
-	img, _, err := image.Decode(bytes.NewReader(frame))
-	if err != nil {
-		return nil, err
-	}
-	return img, nil
+	// Hand the PNG frame to the BUILD-VARIANT's ImageDecoder rather than
+	// decoding here: under enable_vips the whole downstream pipeline
+	// (generator_vips/encoding_vips) only accepts *vips.ImageRef, while the
+	// imaging build wants image.Image — ImageDecoder is exactly that
+	// variant seam, one per build tag.
+	return ImageDecoder{}.Convert(bytes.NewReader(frame))
 }
