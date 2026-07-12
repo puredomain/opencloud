@@ -30,7 +30,8 @@ RUN make go-generate build ENABLE_VIPS=true
 
 FROM alpine:3.24
 
-RUN apk add --no-cache attr ca-certificates curl mailcap tree vips && \
+# timocloud patch #2: ffmpeg for video poster-frame thumbnails.
+RUN apk add --no-cache attr ca-certificates curl mailcap tree vips ffmpeg && \
 	echo 'hosts: files dns' >| /etc/nsswitch.conf
 
 LABEL maintainer="OpenCloud GmbH <devops@opencloud.eu>" \

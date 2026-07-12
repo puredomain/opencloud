@@ -33,12 +33,14 @@ func StorageUsersConfigFromStruct(cfg *config.Config) map[string]any {
 			// TODO build services dynamically
 			"services": map[string]any{
 				"storageprovider": map[string]any{
-					"driver":             cfg.Driver,
-					"drivers":            StorageProviderDrivers(cfg),
-					"mount_id":           cfg.MountID,
-					"expose_data_server": cfg.ExposeDataServer,
-					"data_server_url":    cfg.DataServerURL,
-					"upload_expiration":  cfg.UploadExpiration,
+					"driver":   cfg.Driver,
+					"drivers":  StorageProviderDrivers(cfg),
+					"mount_id": cfg.MountID,
+					// timocloud patch #1: see config.go's CustomMimeTypesJSON.
+					"custom_mimetypes_json": cfg.CustomMimeTypesJSON,
+					"expose_data_server":    cfg.ExposeDataServer,
+					"data_server_url":       cfg.DataServerURL,
+					"upload_expiration":     cfg.UploadExpiration,
 					"events": map[string]any{
 						"nats_address":     cfg.Events.Addr,
 						"nats_clusterid":   cfg.Events.ClusterID,
