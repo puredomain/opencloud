@@ -344,6 +344,17 @@ func ForType(mimeType string, opts map[string]any) FileConverter {
 		fallthrough
 	case "audio/ogg":
 		return AudioDecoder{}
+	// timocloud patch #2: see preprocessor_video.go.
+	case "video/mp4":
+		fallthrough
+	case "video/webm":
+		fallthrough
+	case "video/quicktime":
+		fallthrough
+	case "video/x-matroska":
+		fallthrough
+	case "video/x-msvideo":
+		return VideoDecoder{}
 	default:
 		return ImageDecoder{}
 	}
