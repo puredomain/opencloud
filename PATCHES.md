@@ -23,8 +23,17 @@ zero as practically possible.
 
 ## Pinned upstream version
 
-- Base tag: **`v7.2.1`** (OpenCloud release, published 2026-07-06)
-- Both `upstream-main` and `timocloud` were branched from this tag.
+- Base tag: **`v7.2.0`** — repinned 2026-07-12 to MATCH THE LIVE DEPLOYMENT
+  (opencloudeu/opencloud-rolling:7.2.0). The original `timocloud` branch was
+  cut from `v7.2.1`, one minor AHEAD of production; the first fork-image
+  boot against the production data volume failed owner authentication
+  ("could not authenticate ... code 6" from the proxy's basic
+  authenticator; graph /users listed only admin) while the on-disk
+  idm.boltdb still contained the owner entry — a 7.2.0→7.2.1 IDM
+  read-compat issue, not data loss (verified: downgrading to upstream
+  7.2.0 restored owner auth untouched). RULE: the fork base tag must equal
+  the deployed version; bump both together, testing the IDM upgrade on a
+  volume copy first. Active branch: `timocloud-7.2.0`.
 
 ## Patch table
 
