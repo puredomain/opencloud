@@ -18,7 +18,15 @@ FROM quay.io/opencloudeu/nodejs-ci:24 AS generate
 
 COPY ./ /opencloud/
 
-WORKDIR /opencloud/opencloud
+# timocloud build fix (found live 2026-07-12): running node-generate-prod
+# from the opencloud/ submodule skips every OTHER module's asset build —
+# services/idp keeps only its tracked assets/.keep, //go:embed embeds that
+# placeholder, and the server crash-loops at runtime with 'Could not open
+# index template'. The ROOT Makefile's node-generate-prod loops OC_MODULES
+# (idp included); run it there. Upstream-issue candidate: the published
+# images use docker/Dockerfile.multiarch + a root-level generate in CI, so
+# this source Dockerfile appears untested upstream.
+WORKDIR /opencloud
 RUN make node-generate-prod
 
 FROM quay.io/opencloudeu/golang-ci:1.25 AS build
