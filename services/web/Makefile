@@ -40,7 +40,11 @@ pull-assets:
 
 .PHONY: download-assets
 download-assets:
-	git clean -xfd assets
+	# timocloud build fix: the source Dockerfile's build context has no .git
+	# (dockerignore), so `git clean` dies with 128 and the whole
+	# node-generate-prod loop aborts. In a fresh docker COPY the assets dir is
+	# pristine anyway; fall back to an explicit wipe of the download target.
+	git clean -xfd assets || rm -rf assets/core && mkdir -p assets/core
 	curl --fail -slL -o- https://github.com/opencloud-eu/web/releases/download/$(WEB_ASSETS_VERSION)/web.tar.gz | tar xzf - -C assets/core/
 
 .PHONY: ci-node-save-licenses
