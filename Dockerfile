@@ -31,8 +31,17 @@ RUN make go-generate build ENABLE_VIPS=true
 FROM alpine:3.24
 
 # timocloud patch #2: ffmpeg for video poster-frame thumbnails.
+# timocloud deploy parity: the published opencloud-rolling image creates
+# uid/gid 1000 with HOME=/var/lib/opencloud — without it, HOME='/' and the
+# server looks for config at /.opencloud/config and crash-loops on
+# 'jwt_secret has not been set' (found live 2026-07-12 on first fork-image
+# boot). Mirror that user setup here.
 RUN apk add --no-cache attr ca-certificates curl mailcap tree vips ffmpeg && \
-	echo 'hosts: files dns' >| /etc/nsswitch.conf
+	echo 'hosts: files dns' >| /etc/nsswitch.conf && \
+	addgroup -g 1000 opencloud-group && \
+	adduser -D -H -u 1000 -G opencloud-group -h /var/lib/opencloud -s /sbin/nologin opencloud-user && \
+	mkdir -p /var/lib/opencloud /etc/opencloud && \
+	chown -R opencloud-user:opencloud-group /var/lib/opencloud /etc/opencloud
 
 LABEL maintainer="OpenCloud GmbH <devops@opencloud.eu>" \
         org.opencontainers.image.title="OpenCloud" \
