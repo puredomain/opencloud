@@ -12,6 +12,7 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+	"time"
 
 	userv1beta1 "github.com/cs3org/go-cs3apis/cs3/identity/user/v1beta1"
 	provider "github.com/cs3org/go-cs3apis/cs3/storage/provider/v1beta1"
@@ -262,11 +263,67 @@ func matchToPropResponse(ctx context.Context, davPrefix, publicURL string, match
 		propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:favorite", "1"))
 	}
 
+	// timocloud patch #3 (PATCHES.md): the search engine extracts and stores
+	// photo/image/location metadata (tika.go → bleve → Entity fields 16/18/19)
+	// but this REPORT response never emitted it, so clients had no way to read
+	// e.g. a photo's taken-date without re-downloading and parsing EXIF
+	// themselves. Emit-when-present only — an absent facet means "not
+	// extracted", and an empty prop would misstate that.
+	appendPhotoProps(&propstatOK, match.Entity)
+
 	if len(propstatOK.Prop) > 0 {
 		response.Propstat = append(response.Propstat, propstatOK)
 	}
 
 	return &response, nil
+}
+
+// appendPhotoProps emits the extracted photo / image / location facets as
+// oc: props (timocloud patch #3). Numeric formatting: floats via 'f'/-1
+// (shortest round-trip), ints via base 10; timestamps as RFC3339 UTC.
+func appendPhotoProps(propstatOK *propfind.PropstatXML, entity *searchmsg.Entity) {
+	if p := entity.GetPhoto(); p != nil {
+		if p.TakenDateTime != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:photo-taken-date-time", p.GetTakenDateTime().AsTime().UTC().Format(time.RFC3339)))
+		}
+		if p.CameraMake != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:photo-camera-make", p.GetCameraMake()))
+		}
+		if p.CameraModel != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:photo-camera-model", p.GetCameraModel()))
+		}
+		if p.FNumber != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:photo-f-number", strconv.FormatFloat(float64(p.GetFNumber()), 'f', -1, 32)))
+		}
+		if p.FocalLength != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:photo-focal-length", strconv.FormatFloat(float64(p.GetFocalLength()), 'f', -1, 32)))
+		}
+		if p.Iso != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:photo-iso", strconv.FormatInt(int64(p.GetIso()), 10)))
+		}
+		if p.Orientation != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:photo-orientation", strconv.FormatInt(int64(p.GetOrientation()), 10)))
+		}
+	}
+	if img := entity.GetImage(); img != nil {
+		if img.Width != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:image-width", strconv.FormatInt(int64(img.GetWidth()), 10)))
+		}
+		if img.Height != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:image-height", strconv.FormatInt(int64(img.GetHeight()), 10)))
+		}
+	}
+	if loc := entity.GetLocation(); loc != nil {
+		if loc.Latitude != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:location-latitude", strconv.FormatFloat(loc.GetLatitude(), 'f', -1, 64)))
+		}
+		if loc.Longitude != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:location-longitude", strconv.FormatFloat(loc.GetLongitude(), 'f', -1, 64)))
+		}
+		if loc.Altitude != nil {
+			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:location-altitude", strconv.FormatFloat(loc.GetAltitude(), 'f', -1, 64)))
+		}
+	}
 }
 
 func hasPreview(md *provider.ResourceInfo, appendToOK func(p ...prop.PropertyXML)) {
