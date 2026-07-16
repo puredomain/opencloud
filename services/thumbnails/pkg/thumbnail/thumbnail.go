@@ -101,6 +101,16 @@ func mapToStorageRequest(r Request) storage.Request {
 	}
 }
 
+// UnsupportedFileTypeDetail is the merrors.Error.Detail value the thumbnails
+// grpc service sets (services/thumbnails/pkg/service/grpc/v0/service.go) when
+// it returns a NotFound for a file whose mimetype IsMimeTypeSupported rejects
+// — as opposed to a NotFound for a file that genuinely doesn't exist. It's
+// exported so callers on the other side of the grpc boundary (webdav's
+// thumbnail handlers) can tell the two NotFound cases apart without
+// hardcoding the string twice; see webdav's thumbnailNotFoundMsg (timocloud
+// patch #4, honest 404).
+const UnsupportedFileTypeDetail = "Unsupported file type"
+
 // IsMimeTypeSupported validate if the mime type is supported
 func IsMimeTypeSupported(m string) bool {
 	mimeType, _, err := mime.ParseMediaType(m)

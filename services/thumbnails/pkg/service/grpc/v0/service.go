@@ -325,7 +325,11 @@ func (g Thumbnail) stat(path, auth string) (*provider.StatResponse, error) {
 		return nil, merrors.NotFound(g.serviceID, "resource info is missing a checksum")
 	}
 	if !thumbnail.IsMimeTypeSupported(rsp.GetInfo().GetMimeType()) {
-		return nil, merrors.NotFound(g.serviceID, "Unsupported file type")
+		// timocloud patch #4 (honest 404): this Detail string is the signal
+		// webdav's thumbnailNotFoundMsg uses to distinguish "unsupported
+		// mimetype" from "file genuinely not found" — keep it in sync via
+		// thumbnail.UnsupportedFileTypeDetail, don't inline a new literal.
+		return nil, merrors.NotFound(g.serviceID, thumbnail.UnsupportedFileTypeDetail)
 	}
 	return rsp, nil
 }
