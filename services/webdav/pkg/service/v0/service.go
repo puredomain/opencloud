@@ -31,6 +31,7 @@ import (
 	thumbnailsmsg "github.com/opencloud-eu/opencloud/protogen/gen/opencloud/messages/thumbnails/v0"
 	searchsvc "github.com/opencloud-eu/opencloud/protogen/gen/opencloud/services/search/v0"
 	thumbnailssvc "github.com/opencloud-eu/opencloud/protogen/gen/opencloud/services/thumbnails/v0"
+	"github.com/opencloud-eu/opencloud/services/thumbnails/pkg/thumbnail"
 	"github.com/opencloud-eu/opencloud/services/webdav/pkg/config"
 	"github.com/opencloud-eu/opencloud/services/webdav/pkg/constants"
 	"github.com/opencloud-eu/opencloud/services/webdav/pkg/dav/requests"
@@ -256,8 +257,9 @@ func (g Webdav) SpacesThumbnail(w http.ResponseWriter, r *http.Request) {
 		e := merrors.Parse(err.Error())
 		switch e.Code {
 		case http.StatusNotFound:
-			// StatusNotFound is expected for unsupported files
-			renderError(w, r, errNotFound(notFoundMsg(tr.Filename)))
+			// StatusNotFound is expected both for unsupported files and for
+			// genuinely missing ones; thumbnailNotFoundMsg tells them apart.
+			renderError(w, r, errNotFound(thumbnailNotFoundMsg(e, tr.Filename)))
 			return
 		case http.StatusTooEarly:
 			// StatusTooEarly if file is processing
@@ -359,8 +361,9 @@ func (g Webdav) Thumbnail(w http.ResponseWriter, r *http.Request) {
 		e := merrors.Parse(err.Error())
 		switch e.Code {
 		case http.StatusNotFound:
-			// StatusNotFound is expected for unsupported files
-			renderError(w, r, errNotFound(notFoundMsg(tr.Filename)))
+			// StatusNotFound is expected both for unsupported files and for
+			// genuinely missing ones; thumbnailNotFoundMsg tells them apart.
+			renderError(w, r, errNotFound(thumbnailNotFoundMsg(e, tr.Filename)))
 			return
 		case http.StatusTooEarly:
 			// StatusTooEarly if file is processing
@@ -410,8 +413,9 @@ func (g Webdav) PublicThumbnail(w http.ResponseWriter, r *http.Request) {
 		e := merrors.Parse(err.Error())
 		switch e.Code {
 		case http.StatusNotFound:
-			// StatusNotFound is expected for unsupported files
-			renderError(w, r, errNotFound(notFoundMsg(tr.Filename)))
+			// StatusNotFound is expected both for unsupported files and for
+			// genuinely missing ones; thumbnailNotFoundMsg tells them apart.
+			renderError(w, r, errNotFound(thumbnailNotFoundMsg(e, tr.Filename)))
 			return
 		case http.StatusBadRequest:
 			renderError(w, r, errBadRequest(e.Detail))
@@ -455,8 +459,9 @@ func (g Webdav) PublicThumbnailHead(w http.ResponseWriter, r *http.Request) {
 		e := merrors.Parse(err.Error())
 		switch e.Code {
 		case http.StatusNotFound:
-			// StatusNotFound is expected for unsupported files
-			renderError(w, r, errNotFound(notFoundMsg(tr.Filename)))
+			// StatusNotFound is expected both for unsupported files and for
+			// genuinely missing ones; thumbnailNotFoundMsg tells them apart.
+			renderError(w, r, errNotFound(thumbnailNotFoundMsg(e, tr.Filename)))
 			return
 		case http.StatusBadRequest:
 			renderError(w, r, errBadRequest(e.Detail))
@@ -579,6 +584,26 @@ func renderError(w http.ResponseWriter, r *http.Request, err *errResponse) {
 
 func notFoundMsg(name string) string {
 	return "File with name " + name + " could not be located"
+}
+
+// thumbnailNotFoundMsg picks the message rendered for a thumbnails-service
+// StatusNotFound response. The grpc thumbnails layer
+// (services/thumbnails/pkg/service/grpc/v0/service.go) returns NotFound for
+// two different situations that share one HTTP status: a file that
+// genuinely doesn't exist (or a stat error), and a file that exists but has
+// a mimetype thumbnail.IsMimeTypeSupported rejects. It flags the latter by
+// setting the merrors.Error's Detail to thumbnail.UnsupportedFileTypeDetail
+// — that string match is the only signal available across the gRPC
+// boundary (go-micro's errors.Error doesn't carry a richer discriminant), so
+// this helper is coupled to that constant staying in sync between the two
+// services. Genuinely-missing files keep the pre-existing generic message;
+// unsupported-type files get the honest detail instead of "could not be
+// located" (timocloud patch #4).
+func thumbnailNotFoundMsg(e *merrors.Error, name string) string {
+	if e.Detail == thumbnail.UnsupportedFileTypeDetail {
+		return e.Detail
+	}
+	return notFoundMsg(name)
 }
 
 func addRetryAfterHeader(w http.ResponseWriter) {
