@@ -141,6 +141,42 @@ var _ = Describe("Tika", func() {
 
 		})
 
+		It("adds duration for video content", func() {
+			fullResponse = `[
+				{
+					"xmpDM:duration": "2.0",
+					"Content-Type": "video/mp4"
+				}
+			]`
+			doc, err := tika.Extract(context.TODO(), &provider.ResourceInfo{
+				Type: provider.ResourceType_RESOURCE_TYPE_FILE,
+				Size: 1,
+			})
+			Expect(err).ToNot(HaveOccurred())
+
+			audio := doc.Audio
+			Expect(audio).ToNot(BeNil())
+			Expect(audio.Duration).To(Equal(libregraph.PtrInt64(2000)))
+		})
+
+		It("does not add duration when a video has none", func() {
+			fullResponse = `[
+				{
+					"Content-Type": "video/mp4"
+				}
+			]`
+			doc, err := tika.Extract(context.TODO(), &provider.ResourceInfo{
+				Type: provider.ResourceType_RESOURCE_TYPE_FILE,
+				Size: 1,
+			})
+			Expect(err).ToNot(HaveOccurred())
+
+			// Content-Type still matches the widened gate, so getAudio runs,
+			// but with no xmpDM:duration key present it returns nil rather
+			// than an empty struct.
+			Expect(doc.Audio).To(BeNil())
+		})
+
 		It("adds location content", func() {
 			fullResponse = `[
 				{

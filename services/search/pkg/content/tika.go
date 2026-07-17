@@ -95,7 +95,22 @@ func (t Tika) Extract(ctx context.Context, ri *provider.ResourceInfo) (Document,
 		doc.Image = t.getImage(meta)
 		doc.Photo = t.getPhoto(meta)
 
-		if contentType, err := getFirstValue(meta, "Content-Type"); err == nil && strings.HasPrefix(contentType, "audio/") {
+		// timocloud patch #5 (PATCHES.md): widen this gate to also cover
+		// video/* content-types. Tika emits xmpDM:duration for video files
+		// under the same xmpDM namespace it uses for audio (verified against
+		// the running Tika container: video/mp4 → xmpDM:duration=2.0), and
+		// the search proto's Entity has no separate Video message — only
+		// Audio (field 15) — so there is nowhere else to put a video's
+		// duration. getAudio's field reads are container-agnostic (they key
+		// off xmpDM:* meta keys, not the content-type), so reusing it
+		// wholesale is correct: for a video/* file the audio-only fields
+		// (album, artist, ...) simply stay nil because Tika never emits them
+		// for video, while Duration populates normally. A thin getVideo
+		// wrapper would just re-read the same xmpDM:duration key into the
+		// same Audio struct, adding indirection with no behavioural
+		// difference.
+		if contentType, err := getFirstValue(meta, "Content-Type"); err == nil &&
+			(strings.HasPrefix(contentType, "audio/") || strings.HasPrefix(contentType, "video/")) {
 			doc.Audio = t.getAudio(meta)
 		}
 	}
