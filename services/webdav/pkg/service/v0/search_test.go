@@ -112,4 +112,28 @@ var _ = Describe("AppendPhotoProps", func() {
 			Expect(v).To(Equal(want), "prop %s", name)
 		}
 	})
+
+	// timocloud patch #5: oc:audio-duration, emitted from Entity.Audio
+	// (shared by both audio/* and, since tika.go's widened gate, video/*
+	// content-types — the proto has no separate Video message).
+	It("emits oc:audio-duration when Audio.Duration is present", func() {
+		ps := &propfind.PropstatXML{}
+		ptrDur := func(i int64) *int64 { return &i }
+		appendPhotoProps(ps, &searchmsg.Entity{
+			Audio: &searchmsg.Audio{Duration: ptrDur(2000)},
+		})
+		Expect(ps.Prop).To(HaveLen(1))
+		v, ok := propValue(ps, "oc:audio-duration")
+		Expect(ok).To(BeTrue())
+		Expect(v).To(Equal("2000"))
+	})
+
+	It("emits nothing for audio-duration when Audio is present but Duration is nil", func() {
+		ps := &propfind.PropstatXML{}
+		appendPhotoProps(ps, &searchmsg.Entity{
+			Audio: &searchmsg.Audio{},
+		})
+		_, ok := propValue(ps, "oc:audio-duration")
+		Expect(ok).To(BeFalse())
+	})
 })

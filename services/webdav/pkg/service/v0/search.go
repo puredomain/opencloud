@@ -324,6 +324,14 @@ func appendPhotoProps(propstatOK *propfind.PropstatXML, entity *searchmsg.Entity
 			propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:location-altitude", strconv.FormatFloat(loc.GetAltitude(), 'f', -1, 64)))
 		}
 	}
+	// timocloud patch #5 (PATCHES.md): xmpDM:duration is now read for
+	// video/* content-types too (services/search/pkg/content/tika.go), and
+	// lands in the same Entity.Audio field (the proto has no separate Video
+	// message). Duration is milliseconds (int64) — see tika_test.go's
+	// "225.5" seconds -> 225500 precedent.
+	if a := entity.GetAudio(); a != nil && a.Duration != nil {
+		propstatOK.Prop = append(propstatOK.Prop, prop.Escaped("oc:audio-duration", strconv.FormatInt(a.GetDuration(), 10)))
+	}
 }
 
 func hasPreview(md *provider.ResourceInfo, appendToOK func(p ...prop.PropertyXML)) {
