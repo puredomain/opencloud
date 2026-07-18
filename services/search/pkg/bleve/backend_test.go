@@ -613,6 +613,35 @@ var _ = Describe("Bleve", func() {
 
 	Describe("File type specific metadata", func() {
 
+		Context("with video duration metadata (timocloud patch #5)", func() {
+			BeforeEach(func() {
+				resource := search.Resource{
+					ID:       "1$2!8",
+					ParentID: rootResource.ID,
+					RootID:   rootResource.ID,
+					Path:     "./some_clip.mp4",
+					Type:     uint64(sprovider.ResourceType_RESOURCE_TYPE_FILE),
+					Document: content.Document{
+						Name:     "some_clip.mp4",
+						MimeType: "video/mp4",
+						Audio: &libregraph.Audio{
+							Duration: libregraph.PtrInt64(2000),
+						},
+					},
+				}
+				err := eng.Upsert(resource.ID, resource)
+				Expect(err).ToNot(HaveOccurred())
+			})
+
+			It("returns the duration for a video mime type (read-side gate widened with the write side)", func() {
+				matches := assertDocCount(rootResource.ID, `*clip*`, 1)
+				audio := matches[0].Entity.Audio
+
+				Expect(audio).ToNot(BeNil())
+				Expect(audio.Duration).To(Equal(libregraph.PtrInt64(2000)))
+			})
+		})
+
 		Context("with audio metadata", func() {
 			BeforeEach(func() {
 				resource := search.Resource{

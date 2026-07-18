@@ -76,7 +76,13 @@ func getFragmentValue(m bleveSearch.FieldFragmentMap, key string, idx int) strin
 }
 
 func getAudioValue[T any](fields map[string]any) *T {
-	if !strings.HasPrefix(getFieldValue[string](fields, "MimeType"), "audio/") {
+	// timocloud patch #5 (PATCHES.md): the write side (content/tika.go) now
+	// populates Audio.Duration for video/* too — this read-side gate must
+	// match, or the indexed duration is silently dropped at query time for
+	// every video (found live on the tc4 deploy: index carried the field,
+	// REPORT never showed it).
+	mimeType := getFieldValue[string](fields, "MimeType")
+	if !strings.HasPrefix(mimeType, "audio/") && !strings.HasPrefix(mimeType, "video/") {
 		return nil
 	}
 
